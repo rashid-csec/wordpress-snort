@@ -1,0 +1,53 @@
+# System files
+*.log
+*.pid
+*.swp
+*.bak
+*.tmp
+*.DS_Store
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/debug.log
+
+# Apache
+/var/log/apache2/*
+
+# MySQL
+*.sql
+*.db
+
+# Snort
+/var/log/snort/*
+/etc/snort/*.conf
+/etc/snort/rules/*.rules
+
+# Fail2Ban
+/var/log/fail2ban.log
+
+# Splunk
+/opt/splunkforwarder/var/log/*
+/opt/splunkforwarder/etc/passwd
+
+# ELK Stack
+/var/log/logstash/*
+/var/log/elasticsearch/*
+/var/log/kibana/*
+*.gz
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# OS/Backup files
+*~
+*.old
+*.orig
+
+# Git
+.gitignore
+LICENSE
