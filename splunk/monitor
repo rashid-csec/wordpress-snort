@@ -1,0 +1,5 @@
+sudo ./splunk add monitor /var/log/auth.log -index war
+sudo ./splunk add monitor /var/log/syslog -index war
+sudo ./splunk add monitor /var/log/apache2/access.log -index war
+sudo ./splunk add monitor /var/log/apache2/error.log -index war
+sudo ./splunk add monitor /var/log/snort/snort.alert.fast -index war
