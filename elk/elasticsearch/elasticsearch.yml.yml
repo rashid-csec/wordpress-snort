@@ -1,0 +1,24 @@
+# ======================== Elasticsearch Configuration =========================
+
+# ---------------------------------- Cluster -----------------------------------
+cluster.name: my-application
+
+# ------------------------------------ Node ------------------------------------
+node.name: scarface
+
+# ----------------------------------- Paths ------------------------------------
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+
+# ---------------------------------- Network -----------------------------------
+network.host: 0.0.0.0       # Listen on all network interfaces
+http.port: 9200             # Default HTTP port
+
+# --------------------------------- Discovery ----------------------------------
+cluster.initial_master_nodes: ["scarface"]
+
+# ---------------------------------- Security ----------------------------------
+# Disable xpack security for simple local testing (no HTTPS, no auth)
+xpack.security.enabled: false
+xpack.security.transport.ssl.enabled: false
+xpack.security.http.ssl.enabled: false

@@ -1,0 +1,29 @@
+# =================== Kibana Server ===================
+server.port: 5601
+server.host: "0.0.0.0"        # Allow external access (change to IP for production)
+
+# =================== Elasticsearch Connection ===================
+elasticsearch.hosts: ["http://localhost:9200"]
+
+# Uncomment and set these if xpack security is enabled
+# elasticsearch.username: "kibana_system"
+# elasticsearch.password: "your_password"
+
+# Disable SSL verification if Elasticsearch doesn't use HTTPS
+elasticsearch.ssl.verificationMode: none
+
+# =================== Logging Configuration ===================
+logging:
+  appenders:
+    file:
+      type: file
+      fileName: /var/log/kibana/kibana.log
+      layout:
+        type: json
+  root:
+    appenders:
+      - default
+      - file
+
+# =================== Process ID ===================
+pid.file: /run/kibana/kibana.pid

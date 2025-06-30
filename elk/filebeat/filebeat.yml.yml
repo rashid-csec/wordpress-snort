@@ -1,0 +1,47 @@
+###################### Filebeat Configuration #########################
+
+# ============================== Filebeat Inputs ===============================
+filebeat.inputs:
+  - type: filestream
+    enabled: true
+    id: default-filestream
+    paths:
+      - /var/log/syslog
+      - /var/log/auth.log
+      - /var/log/apache2/access.log
+      - /var/log/apache2/error.log
+      - /var/log/snort/snort.alert.fast
+
+# ============================== Filebeat Modules ==============================
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+# ======================= Elasticsearch Template Settings =======================
+setup.template.settings:
+  index.number_of_shards: 1
+
+# =================================== Kibana ===================================
+setup.kibana:
+  host: "http://localhost:5601"
+
+# ================================== Output =====================================
+output.elasticsearch:
+  hosts: ["http://localhost:9200"]
+  preset: balanced
+
+# ================================= Processors =================================
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
+  - add_docker_metadata: ~
+  - add_kubernetes_metadata: ~
+
+# ================================== Logging ===================================
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat.log
+  keepfiles: 7
+  permissions: 0644
