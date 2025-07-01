@@ -3,6 +3,10 @@
 > **Author**: Rashid  
 > **Location**: Dubai, UAE  
 > **Date**: June 2025
+> # WordPress Snort Security Lab by Rashid
+
+This public GitHub repository demonstrates a WordPress security lab integrating Snort IDS, Fail2Ban IPS, ELK Stack, and Splunk on Ubuntu.
+
 
 A complete cybersecurity project integrating WordPress with Snort IDS, Fail2Ban IPS, Splunk, and the ELK Stack (Elasticsearch, Logstash, Kibana, Filebeat) for real-time log monitoring and attack detection on an Ubuntu server.
 
