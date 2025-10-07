@@ -47,6 +47,3 @@ This project simulates a real-world web server hosting a WordPress site and demo
 
 ---
 
-## 📁 Project Structure
-
-.
